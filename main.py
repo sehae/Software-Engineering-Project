@@ -8,7 +8,7 @@ sys.path.append('path/to/Software-Engineering-Project')
 def test():
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
-    ui = myLoginScreen()
+    ui = adminMaintenance()
     ui.setupUi(MainWindow)
     MainWindow.setWindowState(QtCore.Qt.WindowFullScreen)
     MainWindow.show()
