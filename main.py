@@ -275,7 +275,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def show_view_product(self):
         self.stacked_widget.setCurrentWidget(self.inventory_view)
 
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
