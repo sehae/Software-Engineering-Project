@@ -123,7 +123,6 @@ class myLoginScreen(QMainWindow, Ui_MainWindow):
 
         except Exception as e:
             print(f"An error occurred during login: {e}")
-            show_error_message("Error", f"An error occurred during login: {e}")
         finally:
             cursor.close()
 
