@@ -16,32 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `weekly_report`
+-- Table structure for table `employeelogin`
 --
 
-DROP TABLE IF EXISTS `weekly_report`;
+DROP TABLE IF EXISTS `employeelogin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `weekly_report` (
-  `Weekly_Report_ID` int NOT NULL,
-  `Start_Date` varchar(45) DEFAULT NULL,
-  `End_Date` varchar(45) DEFAULT NULL,
-  `Total_Sale` varchar(45) DEFAULT NULL,
-  `Total_Items_Sold` varchar(45) DEFAULT NULL,
-  `Admin_ID` int DEFAULT NULL,
-  PRIMARY KEY (`Weekly_Report_ID`),
-  KEY `fk_AdminID_weekly` (`Admin_ID`),
-  CONSTRAINT `fk_AdminID_weekly` FOREIGN KEY (`Admin_ID`) REFERENCES `admin` (`Admin_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `employeelogin` (
+  `Employee_ID` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `is_active` tinyint NOT NULL DEFAULT '1',
+  PRIMARY KEY (`Employee_ID`),
+  CONSTRAINT `fk_EmployeeID_employeeLogin` FOREIGN KEY (`Employee_ID`) REFERENCES `employee` (`Employee_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `weekly_report`
+-- Dumping data for table `employeelogin`
 --
 
-LOCK TABLES `weekly_report` WRITE;
-/*!40000 ALTER TABLE `weekly_report` DISABLE KEYS */;
-/*!40000 ALTER TABLE `weekly_report` ENABLE KEYS */;
+LOCK TABLES `employeelogin` WRITE;
+/*!40000 ALTER TABLE `employeelogin` DISABLE KEYS */;
+INSERT INTO `employeelogin` VALUES (1,'emp','Table1234*',0),(2,'emp2','emp2',1),(3,'emp3','emp3',1),(10,'PB0110','xk{{H,90',1),(11,'NF0211','5)nH43-i',1),(12,'TT0212','G3KaZ.!6',1),(13,'MT0213','F4WSkn]L',1),(14,'HS0214','Ptb0w?im',1),(16,'AA0216','>:GV4!-^',1),(17,'AA0217','YX:3Z]/@',1),(18,'AA0218','dUw{}T9\\',1),(20,'LV0220','O=#<(/X4',1),(25,'NP0225','6fdcd56ce6a79b3d7826d743a371b28199c150aeb671afb51631363dd1c1da909dea977c3c0f6f975332972b0a6e8c8266fdbd4d5b7dcc164dbe08e7b788c1d10afc82bc2033dbeee46ed9e61c2d52a5d7f87f79ac9e7d981c00bbf146857d87',1),(26,'JL0226','c3f79eb89438d69411ba4a8ee29a2a3636f4b7eb170d5b21fbc4865b10e574bb48fdb3800c40d49603eb8b4f2d5da32ed17aeb22af796956060835c577c965ddbfe0bb0186712c37d04b1980777ece069f3810514c039150cb0e449c445012d2',1);
+/*!40000 ALTER TABLE `employeelogin` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
